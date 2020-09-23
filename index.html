@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=" https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- libreria de ambientes -->
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+ 
+ <!--  LIBRERIAS DE COLISION Y FÍSICAS-->
+
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    
+    <!--MOVIMIENTO DE CÁMARA-->
+    <script src="https://unpkg.com/super-hands@2.0.2/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+</head>
+
+
+<body>
+    <a-scene>
+      <a-scene physics="gravity:0; debug:true" >
+
+        <a-entity id="rig" movement-controls kinematic-body>
+          <a-entity id="camera" camera position="0 3 0" look-controls></a-entity>
+        </a-entity>
+
+        <a-assets>
+         
+          <a-asset-item id="perro" src="./assets/perro-ahora.gltf"></a-asset-item>
+          
+        </a-assets>
+      
+<!-- OBJETOS -->
+<a-entity gltf-model="perro" scale="0.5 0.5 .5" position= "1 0 2"></a-entity>
+        <a-entity gltf-model="perro2" scale="0.5 0.5 .5" position="2 0 3"></a-entity>
+        <a-entity gltf-model="perro3" scale="0.5 0.5 .5" position="3 0 4"></a-entity>
+        <a-entity gltf-model="perro4" scale="0.5 0.5 .5" position="4 0 5"></a-entity>
+        <a-entity gltf-model="perro5" scale="0.5 0.5 .5" position="5 0 6"></a-entity>
+        <a-entity gltf-model="perro6" scale="0.5 0.5 .5" position="6 0 7"></a-entity>
+      
+      </a-assets>
+
+
+        <!-- AMBIENTE -->
+        <a-entity environment="preset: default; groundColor: #445; grid: cross"></a-entity>
+        
+        <a-entity gltf-model="#perro" scale = "0.5 0.5 .5" rotation="0 0 0" position=" 1 0 2 "
+        
+   
+        animation="property:position;
+        to:0 0 -3;
+        dur:200;
+        loop:true;
+        dir:alternate;
+        easing: easeInCirc"></a-entity>
+      
+        <a-entity gltf-model="#perro2" position=" 0 0 0" scale="0.5 0.5 .5" rotation="0 0 0" position=" 2 0 3 "
+       
+        animation="property:position;
+    to:0 -1 -5 ;
+    dur:200;
+    loop:true;
+    dir:alternate;
+    easing: easeInCirc" ></a-entity>
+       
+    </a-scene>
+              
+
+      </a-scene>
+</body>
+</html>
